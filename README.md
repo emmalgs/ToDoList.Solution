@@ -22,6 +22,7 @@ Coding along with Epicodus.
 * _in a simple_
 * _easy-to-understand_
 * _format_
+* _Don't forget setup instructions for appsettings.json_
 
 ## Known Bugs
 
