@@ -92,15 +92,24 @@ namespace ToDoList.Controllers
     [HttpPost]
     public ActionResult AddTag(Item item, int tagId)
     {
-      #nullable enable
+#nullable enable
       ItemTag? joinEntity = _db.ItemTags.FirstOrDefault(join => (join.TagId == tagId && join.ItemId == item.ItemId));
-      #nullable disable
+#nullable disable
       if (joinEntity == null && tagId != 0)
       {
         _db.ItemTags.Add(new ItemTag() { TagId = tagId, ItemId = item.ItemId });
         _db.SaveChanges();
       }
       return RedirectToAction("Details", new { id = item.ItemId });
+    }
+
+    [HttpPost]
+    public ActionResult DeleteJoin(int joinId)
+    {
+      ItemTag joinEntry = _db.ItemTags.FirstOrDefault(entry => entry.ItemTagId == joinId);
+      _db.ItemTags.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
