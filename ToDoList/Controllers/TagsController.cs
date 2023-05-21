@@ -60,8 +60,8 @@ namespace ToDoList.Controllers
       {
         _db.ItemTags.Add(new ItemTag() { ItemId = itemId, TagId = tag.TagId});
         _db.SaveChanges();
-        return RedirectToAction("Details", new { id = tag.TagId });
       }
+      return RedirectToAction("Details", new { id = tag.TagId });
     }
   }
 }
