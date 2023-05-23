@@ -4,6 +4,7 @@
 
 @model ToDoList.Models.Item
 <p>@Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+<p>@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 <h4>Add a new item</h4>
 @using (Html.BeginForm())
